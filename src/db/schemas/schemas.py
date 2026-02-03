@@ -49,3 +49,9 @@ class Showcase(BaseModel):
     caption: str
     date_created: date
     game_id: int
+
+class Pokemon(BaseModel):
+    dex_no: int
+    species: str
+    typeCode: int
+    

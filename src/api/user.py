@@ -8,7 +8,7 @@ from typing import List, Self, Optional
 
 from datetime import date, datetime
 from psycopg import errors
-from src.db.schemas import Color, GameStatus, TimeControl, GameModel, Showcase
+from src.db.schemas.schemas import Color, GameStatus, TimeControl, GameModel, Showcase
 
 router = APIRouter(
     prefix="/user",
