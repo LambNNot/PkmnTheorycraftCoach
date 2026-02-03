@@ -1,0 +1,435 @@
+[
+  {
+    "name": "Bite",
+    "description": "Power is multiplied by 1.5 when used by a Pokemon with the Strong Jaw Ability.",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Bullet",
+    "description": "Has no effect on Pokemon with the Bulletproof Ability.",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Bypasses Substitute",
+    "description": "Ignores a target's substitute.",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Can't Use Twice",
+    "description": "Cannot be selected the turn after it's used.",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "Charge",
+    "description": "The user is unable to make a move between turns.",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Contact",
+    "description": "Makes contact.",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Dance",
+    "description": "When used by a Pokemon, other Pokemon with the Dancer Ability can attempt to execute the same move.",
+    "genfamily": [
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Defrost",
+    "description": "Thaws the user if executed successfully while the user is frozen.",
+    "genfamily": [
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Distance",
+    "description": "Can target a Pokemon positioned anywhere in a Triple Battle.",
+    "genfamily": [
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Fail Copycat",
+    "description": "Copycat fails if this is the last move used by any Pokemon.",
+    "genfamily": [
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Fail Encore",
+    "description": "Encore fails if this is the last move used by the target.",
+    "genfamily": [
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Fail Instruct",
+    "description": "Instruct fails if this is the last move used by the target.",
+    "genfamily": [
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Fail Me First",
+    "description": "Me First fails if this is the move the target is about to use.",
+    "genfamily": [
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Fail Mimic",
+    "description": "Mimic fails if this is the last move used by the target.",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Fail Sketch",
+    "description": "Sketch fails if this is the last move used by the target.",
+    "genfamily": [
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Future Move",
+    "description": "Damages the Pokemon in the targeted slot 2 turns later.",
+    "genfamily": [
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Gravity",
+    "description": "Prevented from being executed or selected during Gravity's effect.",
+    "genfamily": [
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Heal",
+    "description": "Prevented from being executed or selected during Psychic Noise's effect.",
+    "genfamily": [
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Metronome",
+    "description": "Can be selected by Metronome.",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Mirror",
+    "description": "Can be copied by Mirror Move.",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Must Pressure",
+    "description": "Has one more PP deducted for each opposing Pokemon with the Pressure Ability.",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "No Assist",
+    "description": "Cannot be selected by Assist.",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "No Parental Bond",
+    "description": "Cannot become a multi-hit move with the Parental Bond Ability.",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "No Sleep Talk",
+    "description": "Cannot be selected by Sleep Talk.",
+    "genfamily": [
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Non-sky",
+    "description": "Prevented from being executed or selected in a Sky Battle.",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Pledge Combo",
+    "description": "Cannot be redirected by the Lightning Rod or Storm Drain Abilities.",
+    "genfamily": [
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Powder",
+    "description": "Has no effect on Grass-type Pokemon, Pokemon with the Overcoat Ability, and Pokemon holding Safety Goggles.",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Protect",
+    "description": "Blocked by protection moves.",
+    "genfamily": [
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Pulse",
+    "description": "Power is multiplied by 1.5 when used by a Pokemon with the Mega Launcher Ability.",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Punch",
+    "description": "Power is multiplied by 1.2 when used by a Pokemon with the Iron Fist Ability.",
+    "genfamily": [
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Recharge",
+    "description": "If this move is successful, the user must recharge on the following turn and cannot make a move.",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Reflectable",
+    "description": "Bounced back to the original user by Magic Coat or the Magic Bounce Ability.",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Slicing",
+    "description": "Power is multiplied by 1.5 when used by a Pokemon with the Sharpness Ability.",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "Snatch",
+    "description": "Can be stolen from the original user and instead used by another Pokemon using Snatch.",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Sound",
+    "description": "Has no effect on Pokemon with the Soundproof Ability.",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Wind",
+    "description": "Activates the Wind Power and Wind Rider Abilities.",
+    "genfamily": [
+      "SV"
+    ]
+  }
+]

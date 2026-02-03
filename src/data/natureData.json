@@ -1,0 +1,477 @@
+[
+  {
+    "name": "Adamant",
+    "hp": 1,
+    "atk": 1.1,
+    "def": 1,
+    "spa": 0.9,
+    "spd": 1,
+    "spe": 1,
+    "summary": "+Atk, -SpA",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Bashful",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Bold",
+    "hp": 1,
+    "atk": 0.9,
+    "def": 1.1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "+Def, -Atk",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Brave",
+    "hp": 1,
+    "atk": 1.1,
+    "def": 1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 0.9,
+    "summary": "+Atk, -Spe",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Calm",
+    "hp": 1,
+    "atk": 0.9,
+    "def": 1,
+    "spa": 1,
+    "spd": 1.1,
+    "spe": 1,
+    "summary": "+SpD, -Atk",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Careful",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 0.9,
+    "spd": 1.1,
+    "spe": 1,
+    "summary": "+SpD, -SpA",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Docile",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Gentle",
+    "hp": 1,
+    "atk": 1,
+    "def": 0.9,
+    "spa": 1,
+    "spd": 1.1,
+    "spe": 1,
+    "summary": "+SpD, -Def",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Hardy",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Hasty",
+    "hp": 1,
+    "atk": 1,
+    "def": 0.9,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1.1,
+    "summary": "+Spe, -Def",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Impish",
+    "hp": 1,
+    "atk": 1,
+    "def": 1.1,
+    "spa": 0.9,
+    "spd": 1,
+    "spe": 1,
+    "summary": "+Def, -SpA",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Jolly",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 0.9,
+    "spd": 1,
+    "spe": 1.1,
+    "summary": "+Spe, -SpA",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Lax",
+    "hp": 1,
+    "atk": 1,
+    "def": 1.1,
+    "spa": 1,
+    "spd": 0.9,
+    "spe": 1,
+    "summary": "+Def, -SpD",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Lonely",
+    "hp": 1,
+    "atk": 1.1,
+    "def": 0.9,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "+Atk, -Def",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Mild",
+    "hp": 1,
+    "atk": 1,
+    "def": 0.9,
+    "spa": 1.1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "+SpA, -Def",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Modest",
+    "hp": 1,
+    "atk": 0.9,
+    "def": 1,
+    "spa": 1.1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "+SpA, -Atk",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Naive",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1,
+    "spd": 0.9,
+    "spe": 1.1,
+    "summary": "+Spe, -SpD",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Naughty",
+    "hp": 1,
+    "atk": 1.1,
+    "def": 1,
+    "spa": 1,
+    "spd": 0.9,
+    "spe": 1,
+    "summary": "+Atk, -SpD",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Quiet",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1.1,
+    "spd": 1,
+    "spe": 0.9,
+    "summary": "+SpA, -Spe",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Quirky",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Rash",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1.1,
+    "spd": 0.9,
+    "spe": 1,
+    "summary": "+SpA, -SpD",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Relaxed",
+    "hp": 1,
+    "atk": 1,
+    "def": 1.1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 0.9,
+    "summary": "+Def, -Spe",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Sassy",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1,
+    "spd": 1.1,
+    "spe": 0.9,
+    "summary": "+SpD, -Spe",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Serious",
+    "hp": 1,
+    "atk": 1,
+    "def": 1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1,
+    "summary": "",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Timid",
+    "hp": 1,
+    "atk": 0.9,
+    "def": 1,
+    "spa": 1,
+    "spd": 1,
+    "spe": 1.1,
+    "summary": "+Spe, -Atk",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  }
+]

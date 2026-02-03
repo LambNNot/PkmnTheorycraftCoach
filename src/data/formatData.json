@@ -1,0 +1,598 @@
+[
+  {
+    "name": "1v1",
+    "shorthand": "1v1",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "2v2 Doubles",
+    "shorthand": "2v2 Doubles",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Anything Goes",
+    "shorthand": "AG",
+    "genfamily": [
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Almost Any Ability",
+    "shorthand": "Almost Any Ability",
+    "genfamily": [
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Battle Stadium Singles",
+    "shorthand": "Battle Stadium Singles",
+    "genfamily": [
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Balanced Hackmons",
+    "shorthand": "BH",
+    "genfamily": [
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Battle Stadium Singles Series 1",
+    "shorthand": "BSS Series 1",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "Battle Stadium Singles Series 2",
+    "shorthand": "BSS Series 2",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "Camomons",
+    "shorthand": "Camomons",
+    "genfamily": [
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Create-A-Pokemon",
+    "shorthand": "CAP",
+    "genfamily": [
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Challenge Cup 1v1",
+    "shorthand": "CC1v1",
+    "genfamily": [
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Doubles OU",
+    "shorthand": "Doubles",
+    "genfamily": [
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Doubles Ubers",
+    "shorthand": "Doubles Ubers",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Doubles UnderUsed",
+    "shorthand": "Doubles UU",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Draft",
+    "shorthand": "Draft",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Godly Gift",
+    "shorthand": "Godly Gift",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Inheritance",
+    "shorthand": "Inh",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "Little Cup",
+    "shorthand": "LC",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "OM Leader's Choice",
+    "shorthand": "Leader's Choice",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "Metronome Battle",
+    "shorthand": "Metronome Battle",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "Mix and Mega",
+    "shorthand": "Mix and Mega",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Monotype",
+    "shorthand": "Monotype",
+    "genfamily": [
+      "RB",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "National Dex",
+    "shorthand": "National Dex",
+    "genfamily": [
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "National Dex Doubles",
+    "shorthand": "National Dex Doubles",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "National Dex Monotype",
+    "shorthand": "National Dex Monotype",
+    "genfamily": [
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "National Dex Rotational",
+    "shorthand": "National Dex Rotational",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "National Dex RU",
+    "shorthand": "National Dex RU",
+    "genfamily": [
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "National Dex Ubers",
+    "shorthand": "National Dex Ubers",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "National Dex UU",
+    "shorthand": "National Dex UU",
+    "genfamily": [
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "NFE",
+    "shorthand": "NFE",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "NeverUsed",
+    "shorthand": "NU",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "NUBL",
+    "shorthand": "NUBL",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "OM of the Month",
+    "shorthand": "OMotM",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "OverUsed",
+    "shorthand": "OU",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Partners in Crime",
+    "shorthand": "Partners in Crime",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "PU",
+    "shorthand": "PU",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "PUBL",
+    "shorthand": "PUBL",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Random Battle",
+    "shorthand": "Random Battle",
+    "genfamily": [
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Random Doubles Battle",
+    "shorthand": "Random Doubles",
+    "genfamily": [
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "RarelyUsed",
+    "shorthand": "RU",
+    "genfamily": [
+      "RS",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "RUBL",
+    "shorthand": "RUBL",
+    "genfamily": [
+      "RS",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Super Staff Bros: Ultimate",
+    "shorthand": "SSB",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "STABmons",
+    "shorthand": "STABmons",
+    "genfamily": [
+      "RB",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Triples",
+    "shorthand": "Triples",
+    "genfamily": [
+      "XY",
+      "SV"
+    ]
+  },
+  {
+    "name": "Uber",
+    "shorthand": "Uber",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "Ubers UU",
+    "shorthand": "Ubers UU",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "UnderUsed",
+    "shorthand": "UU",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "UUBL",
+    "shorthand": "UUBL",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC",
+    "shorthand": "VGC",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC 2023 Series 1",
+    "shorthand": "VGC23 Series 1",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC 2023 Series 2",
+    "shorthand": "VGC23 Series 2",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC 2023 Regulation C",
+    "shorthand": "VGC23 Series 3",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC 2023 Regulation D",
+    "shorthand": "VGC23 Series 4",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC 2024 Regulation E",
+    "shorthand": "VGC24 Regulation E",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC 2024 Regulation F",
+    "shorthand": "VGC24 Regulation F",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC 2024 Regulation G",
+    "shorthand": "VGC24 Regulation G",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "VGC 2025 Regulation I",
+    "shorthand": "VGC25 Regulation I",
+    "genfamily": [
+      "SV"
+    ]
+  },
+  {
+    "name": "ZeroUsed",
+    "shorthand": "ZU",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "DP",
+      "BW",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  },
+  {
+    "name": "ZUBL",
+    "shorthand": "ZUBL",
+    "genfamily": [
+      "RB",
+      "GS",
+      "RS",
+      "XY",
+      "SM",
+      "SS",
+      "SV"
+    ]
+  }
+]
