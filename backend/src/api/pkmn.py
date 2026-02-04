@@ -21,3 +21,18 @@ def get_pokemon(species_name):
     """Retrieves a pokemon based on species name."""
     with db.engine.begin() as connection:
         pass
+    return Pokemon(
+        dex_no=303,
+        species="Mawile",
+        typeCode=0,
+        forme="Mega",
+        ability_one_id=0,
+        ability_two_id=0,
+        base_hp=50,
+        base_atk=105,
+        base_def=125,
+        base_spa=55,
+        base_spd=95,
+        base_spe=50,
+        weight=23.5
+    )
