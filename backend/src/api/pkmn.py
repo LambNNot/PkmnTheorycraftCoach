@@ -15,3 +15,9 @@ router = APIRouter(
     tags=["pkmn"],
     dependencies=[Depends(auth.get_api_key)],
 )
+
+@router.get("/{species_name}", response_model=Pokemon)
+def get_pokemon(species_name):
+    """Retrieves a pokemon based on species name."""
+    with db.engine.begin() as connection:
+        pass
