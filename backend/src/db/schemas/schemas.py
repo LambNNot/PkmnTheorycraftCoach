@@ -54,4 +54,17 @@ class Pokemon(BaseModel):
     dex_no: int
     species: str
     typeCode: int
+    forme: str
+    ability_one_id: int
+    ability_two_id: int
+    base_hp: int
+    base_atk: int
+    base_def: int
+    base_spa: int
+    base_spd: int
+    base_spe: int
+    weight: float
+
+
+
     
