@@ -9,7 +9,7 @@ from typing import Self, Optional, List
 from psycopg import errors
 
 from datetime import datetime
-from src.db.schemas import Showcase
+from src.db.schemas.schemas import Showcase
 from datetime import date
 from enum import Enum
 

@@ -4,11 +4,16 @@ from src.api import auth
 from src import database as db
 from typing import List, Optional
 from pydantic import BaseModel
+from src.data.species.pkmn_species import getSpecies
+
+PKMN_SPECIES_PATH = "../data/species/pkmn_species.json"
 
 router = APIRouter(
     prefix="/admin",
     tags=["admin"],
-    dependencies=[Depends(auth.get_api_key)],
+    dependencies=[
+        #Depends(auth.get_api_key)
+    ],
 )
 
 
@@ -83,3 +88,50 @@ def reset_data():
                 """
             )
         )
+
+@router.post("/initSpecies", status_code=status.HTTP_204_NO_CONTENT)
+def init_pkmn_species():
+
+    BATCH_SIZE = 5000
+
+    species_data = getSpecies()
+
+    # Expecting a list[dict] already shaped like DB columns / named params
+    rows = [r for r in species_data if isinstance(r, dict)]
+    if not rows:
+        return None
+
+    def batched(lst, size):
+        for i in range(0, len(lst), size):
+            yield lst[i:i + size]
+
+    with db.engine.begin() as connection:
+        connection.execute(
+                sqlalchemy.text(
+                """
+                DELETE FROM pokemon
+                """
+                )
+            )
+        for batch in batched(rows, BATCH_SIZE):
+            connection.execute(
+                sqlalchemy.text(
+                    """
+                    INSERT INTO pokemon (
+                        dex_no, species, type_code, forme,
+                        ability_one_id, ability_two_id,
+                        base_hp, base_atk, base_def, base_spa, base_spd, base_spe,
+                        weight
+                    )
+                    VALUES (
+                        :dex_no, :species, :typeCode, :forme,
+                        :ability_one_id, :ability_two_id,
+                        :base_hp, :base_atk, :base_def, :base_spa, :base_spd, :base_spe,
+                        :weight
+                    )
+                    """
+                ),
+                batch
+            )
+
+    return None

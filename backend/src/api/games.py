@@ -3,7 +3,7 @@ from src.api import auth
 from src import database as db
 import sqlalchemy
 from typing import List
-from src.db.schemas import GameModel, Color
+from src.db.schemas.schemas import GameModel, Color
 
 router = APIRouter(
     prefix="/games",

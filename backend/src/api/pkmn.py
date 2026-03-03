@@ -5,7 +5,6 @@ from src.api import auth
 import sqlalchemy
 from src import database as db
 from typing import List, Self, Optional
-
 from datetime import date, datetime
 from psycopg import errors
 from src.db.schemas.schemas import Pokemon
@@ -13,26 +12,76 @@ from src.db.schemas.schemas import Pokemon
 router = APIRouter(
     prefix="/pkmn",
     tags=["pkmn"],
-    dependencies=[Depends(auth.get_api_key)],
+    #dependencies=[Depends(auth.get_api_key)],
 )
 
-@router.get("/{species_name}", response_model=Pokemon)
+@router.get("/{species_name}", response_model=List[Pokemon])
 def get_pokemon(species_name):
     """Retrieves a pokemon based on species name."""
     with db.engine.begin() as connection:
-        pass
-    return Pokemon(
-        dex_no=303,
-        species="Mawile",
-        typeCode=0,
-        forme="Mega",
-        ability_one_id=0,
-        ability_two_id=0,
-        base_hp=50,
-        base_atk=105,
-        base_def=125,
-        base_spa=55,
-        base_spd=95,
-        base_spe=50,
-        weight=23.5
-    )
+        results = connection.execute(
+            sqlalchemy.text(
+                """
+                SELECT *
+                FROM pokemon
+                WHERE species ILIKE '%' || :species_name  || '%'
+                ORDER BY dex_no ASC
+                """
+            ),
+            [{"species_name" : species_name}]
+        ).all()
+
+        if results is None:
+            return []
+
+        return [
+            Pokemon(
+                dex_no=result.dex_no,
+                species=result.species,
+                typeCode=result.type_code,
+                forme=result.forme,
+                ability_one_id=result.ability_one_id,
+                ability_two_id=result.ability_two_id,
+                base_hp=result.base_hp,
+                base_atk=result.base_atk,
+                base_def=result.base_def,
+                base_spa=result.base_spa,
+                base_spd=result.base_spd,
+                base_spe=result.base_spe,
+                weight=result.weight,
+            )
+            for result in results
+        ]
+    
+@router.get("/", response_model=List[Pokemon])
+def get_pokemon():
+    """Retrieves a pokemon based on species name."""
+    with db.engine.begin() as connection:
+        rows = connection.execute(
+            sqlalchemy.text(
+                """
+                SELECT *
+                FROM pokemon
+                ORDER BY dex_no ASC
+                """
+            )
+        ).all()
+
+        return [
+            Pokemon(
+                dex_no=result.dex_no,
+                species=result.species,
+                typeCode=result.type_code,
+                forme=result.forme,
+                ability_one_id=result.ability_one_id,
+                ability_two_id=result.ability_two_id,
+                base_hp=result.base_hp,
+                base_atk=result.base_atk,
+                base_def=result.base_def,
+                base_spa=result.base_spa,
+                base_spd=result.base_spd,
+                base_spe=result.base_spe,
+                weight=result.weight,
+            )
+            for result in rows
+        ]

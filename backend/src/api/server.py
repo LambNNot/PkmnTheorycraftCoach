@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.api import games, user, showcases, reports, admin
+from src.api import games, user, showcases, reports, admin, pkmn
 from starlette.middleware.cors import CORSMiddleware
 
 description = """
@@ -24,7 +24,10 @@ app = FastAPI(
     openapi_tags=tags_metadata,
 )
 
-origins = ["https://potion-exchange.vercel.app"]
+origins = [
+    "https://potion-exchange.vercel.app",
+    "http://localhost:5173"
+]
 
 app.add_middleware(
     CORSMiddleware,
@@ -39,6 +42,7 @@ app.include_router(showcases.router)
 app.include_router(user.router)
 app.include_router(reports.router)
 app.include_router(admin.router)
+app.include_router(pkmn.router)
 
 # app.include_router(inventory.router)
 # app.include_router(carts.router)
