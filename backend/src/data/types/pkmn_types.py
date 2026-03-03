@@ -1,0 +1,97 @@
+import json
+from pathlib import Path
+
+CWD = Path(__file__).resolve().parent
+TYPE_FILENAME = "typeData.json"
+TYPE_F_PATH = CWD/TYPE_FILENAME
+
+OUTPUT_FILENAME = "pkmn_types.json"
+OUTPUT_F_PATH = CWD/OUTPUT_FILENAME
+
+RELEVANT_FIELDS = ["name", "description"]
+PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67]
+
+prime_idx_tracker = 0
+def next_prime():
+        global prime_idx_tracker
+        curr = prime_idx_tracker
+        prime_idx_tracker += 1
+        return PRIMES[curr]
+
+def create_weakness_table():
+
+    raise NotImplementedError()
+
+    output_file = "typeDataWithWeaknesses.json"
+    output_path = CWD/output_file
+
+    with open(TYPE_F_PATH) as f:
+        typeData:list[dict] = json.load(f)
+
+    # Init Weakness Table
+    weakness_table:dict = {
+        t.get("name") : []
+        for t in typeData
+    }
+
+    pass # TODO
+
+def getDualTypeCode(t1: str, t2: str) -> int:
+    """
+    Every type is encoded as a unique prime number.
+    Each dual type is encoded by the product of its two constituent types' prime encoding.
+    """
+    # Open file
+    with open(OUTPUT_F_PATH) as f:
+        data = json.load(f)
+    # Load typecode table
+    codeTable = {
+        t.get("name").lower() : t.get("typeCode")
+        for t in data
+    }
+
+    # Check for both types
+    if not (codeTable.get(t1) and codeTable.get(t2)):
+        raise ValueError(f"Invalid types: {t1}, {t2}")
+
+    # Return
+    return codeTable.get(t1) * codeTable.get(t2)
+
+
+if __name__ == "__main__":
+
+    if (len(PRIMES) != 19):
+        raise ValueError(f"Invalid num of primes for prime encoding: {len(PRIMES)}")
+
+    with open(TYPE_F_PATH) as f:
+        typeData:list[dict] = json.load(f)
+
+    print(len(typeData))
+    print(list(typeData[0].keys()))
+
+    allTypes = [t.get("name") for t in typeData]
+    if (len(allTypes) != 19) :
+        raise ValueError(f"Invalid num of types: {len(allTypes)}")
+
+    # Load monotypes
+    parsed_results = [
+        {
+            "typeCode" : next_prime(),
+            "name" : a.get("name").lower(),
+            "atk_mus": [[mu[0].lower(), mu[1]] for mu in a.get("atk_effectives")],
+            "description": a.get("description")
+
+
+        }
+        for a in typeData
+    ]
+
+    print(parsed_results)
+
+    with open(OUTPUT_F_PATH, 'w') as f:
+        json.dump(parsed_results, f, indent=4)
+
+
+
+
+
