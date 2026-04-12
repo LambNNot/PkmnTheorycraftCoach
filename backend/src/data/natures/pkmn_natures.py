@@ -10,6 +10,23 @@ OUTPUT_F_PATH = CWD/OUTPUT_FILENAME
 
 RELEVANT_FIELDS = ["name", "hp", "atk", "def", "spa", "spd", "spe", "summary"]
 
+def getAllNatures():
+    with open(OUTPUT_F_PATH) as f:
+        data = json.load(f)
+    return [
+        {
+            "name": n.get("name"),
+            "hp": n.get("hp"),
+            "atk": n.get("atk"),
+            "dfn": n.get("def"),
+            "spa": n.get("spa"),
+            "spd": n.get("spd"),
+            "spe": n.get("spe"),
+            "summary": n.get("summary"),
+        }
+        for n in data
+    ]
+
 if __name__ == "__main__":
 
     with open(NATURE_F_PATH) as f:

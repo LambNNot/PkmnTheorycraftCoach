@@ -10,6 +10,11 @@ OUTPUT_F_PATH = CWD/OUTPUT_FILENAME
 
 RELEVANT_FIELDS = ["name", "description"]
 
+def getAllAbilities():
+    with open(OUTPUT_F_PATH) as f:
+        data = json.load(f)
+    return data
+
 if __name__ == "__main__":
 
     with open(ABILITY_F_PATH) as f:

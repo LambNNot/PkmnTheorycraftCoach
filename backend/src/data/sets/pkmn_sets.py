@@ -2,13 +2,13 @@ import json
 from pathlib import Path
 
 CWD = Path(__file__).resolve().parent
-ITEM_FILENAME = "itemData.json"
-ITEM_F_PATH = CWD/ITEM_FILENAME
+SET_FILENAME = "setsData.json"
+SET_F_PATH = CWD/SET_FILENAME
 
-OUTPUT_FILENAME = "pkmn_items.json"
+OUTPUT_FILENAME = "pkmn_sets.json"
 OUTPUT_F_PATH = CWD/OUTPUT_FILENAME
 
-RELEVANT_FIELDS = ["name", "description"]
+RELEVANT_FIELDS = []
 
 def getAllItems():
     with open(OUTPUT_F_PATH) as f:
@@ -17,18 +17,18 @@ def getAllItems():
 
 if __name__ == "__main__":
 
-    with open(ITEM_F_PATH) as f:
-        itemData:list[dict] = json.load(f)
+    with open(SET_F_PATH) as f:
+        setsData:list[dict] = json.load(f)
 
-    print(len(itemData))
-    print(list(itemData[0].keys()))
+    print(len(setsData))
+    print(list(setsData[0].keys()))
 
     parsed_results = [
         {
             v : a.get(v)
             for v in RELEVANT_FIELDS
         }
-        for a in itemData
+        for a in setsData
     ]
 
     print(parsed_results)

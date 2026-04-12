@@ -36,6 +36,23 @@ def create_weakness_table():
 
     pass # TODO
 
+def getMonoTypeCode(type_: str) -> int:
+    # Open file
+    with open(OUTPUT_F_PATH) as f:
+        data = json.load(f)
+    # Load typecode table
+    codeTable = {
+        t.get("name").lower() : t.get("typeCode")
+        for t in data
+    }
+
+    # Check for type
+    if not (codeTable.get(type_.lower())):
+        return -1
+
+    # Return
+    return codeTable.get(type_.lower())
+
 def getDualTypeCode(t1: str, t2: str) -> int:
     """
     Every type is encoded as a unique prime number.
@@ -51,11 +68,61 @@ def getDualTypeCode(t1: str, t2: str) -> int:
     }
 
     # Check for both types
-    if not (codeTable.get(t1) and codeTable.get(t2)):
-        raise ValueError(f"Invalid types: {t1}, {t2}")
+    if not (codeTable.get(t1.lower()) and codeTable.get(t2.lower())):
+        return -1
 
     # Return
-    return codeTable.get(t1) * codeTable.get(t2)
+    return codeTable.get(t1.lower()) * codeTable.get(t2.lower())
+
+def getAllTypes() -> list:
+    # Open file
+    with open(OUTPUT_F_PATH) as f:
+        data = json.load(f)
+    # Load typecode table
+    result:list = []
+    codeTable:dict = {}
+    for t in data:
+        result.append(
+            {
+                "name" : t.get("name"),
+                "typeCode" : t.get("typeCode"),
+                "description" : t.get("description", "")
+            }
+        )
+        codeTable.update(
+            {t.get("typeCode") : t.get("name")}
+        )
+    
+    first = 0
+    second = first + 1
+    limit = len(PRIMES)
+    while (first < limit):
+        if second == limit:
+            first += 1
+            second = first + 1
+            continue
+        result.append(
+            {
+                "typeCode" : PRIMES[first] * PRIMES[second],
+                "name" : "-".join([codeTable.get(PRIMES[x]) for x in [first, second]]),
+                "description" : ""
+            }
+        )
+        second += 1
+    return result
+
+def getTypeDescription(t: str) -> str | None:
+    # Open file
+    with open(OUTPUT_F_PATH) as f:
+        data = json.load(f)
+    # Load typecode table
+    codeTable = {
+        d.get("name").lower() : d.get("description")
+        for d in data
+    }
+    
+    return codeTable.get(t)
+
 
 
 if __name__ == "__main__":
@@ -90,6 +157,9 @@ if __name__ == "__main__":
 
     with open(OUTPUT_F_PATH, 'w') as f:
         json.dump(parsed_results, f, indent=4)
+
+    print("-------------------------")
+    print(getAllTypes())
 
 
 

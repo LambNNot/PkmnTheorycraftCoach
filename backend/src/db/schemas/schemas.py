@@ -50,7 +50,7 @@ class Showcase(BaseModel):
     date_created: date
     game_id: int
 
-class Pokemon(BaseModel):
+class PokemonSchema(BaseModel):
     dex_no: int
     species: str
     typeCode: int
@@ -66,28 +66,28 @@ class Pokemon(BaseModel):
     base_spe: int
     weight: float
 
-class Ability(BaseModel):
+class AbilitySchema(BaseModel):
     id: int
     name: str
     description: str
 
-class Item(BaseModel):
+class ItemSchema(BaseModel):
     id: int
     name: str
     description: str
 
-class Type(BaseModel):
+class TypeSchema(BaseModel):
     id: int
     typeCode: int
     name: str
     description: str
 
-class TypeEffectiveness(BaseModel):
+class TypeEffectivenessSchema(BaseModel):
     attack_type_id: int
     defense_type_id: int
     multiplier: float
 
-class Nature(BaseModel):
+class NatureSchema(BaseModel):
     id: int
     name: str
     hp: float
@@ -99,7 +99,7 @@ class Nature(BaseModel):
     summary: str
 
 
-class PokeSet(BaseModel): # Moves not yet implemented
+class PokeSetSchema(BaseModel): # Moves not yet implemented
     id: int
     name: str
     mon_id: int
@@ -118,11 +118,13 @@ class PokeSet(BaseModel): # Moves not yet implemented
     spa_iv: int
     spd_iv: int
     spe_iv: int
+    author_id: int
 
 class User(BaseModel):
     id: int
     username: str
     password_hash: str
+    is_public: bool
     
 
 
