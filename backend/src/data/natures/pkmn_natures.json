@@ -1,0 +1,252 @@
+[
+    {
+        "name": "Adamant",
+        "hp": 1,
+        "atk": 1.1,
+        "def": 1,
+        "spa": 0.9,
+        "spd": 1,
+        "spe": 1,
+        "summary": "+Atk, -SpA"
+    },
+    {
+        "name": "Bashful",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1,
+        "summary": ""
+    },
+    {
+        "name": "Bold",
+        "hp": 1,
+        "atk": 0.9,
+        "def": 1.1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1,
+        "summary": "+Def, -Atk"
+    },
+    {
+        "name": "Brave",
+        "hp": 1,
+        "atk": 1.1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 0.9,
+        "summary": "+Atk, -Spe"
+    },
+    {
+        "name": "Calm",
+        "hp": 1,
+        "atk": 0.9,
+        "def": 1,
+        "spa": 1,
+        "spd": 1.1,
+        "spe": 1,
+        "summary": "+SpD, -Atk"
+    },
+    {
+        "name": "Careful",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 0.9,
+        "spd": 1.1,
+        "spe": 1,
+        "summary": "+SpD, -SpA"
+    },
+    {
+        "name": "Docile",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1,
+        "summary": ""
+    },
+    {
+        "name": "Gentle",
+        "hp": 1,
+        "atk": 1,
+        "def": 0.9,
+        "spa": 1,
+        "spd": 1.1,
+        "spe": 1,
+        "summary": "+SpD, -Def"
+    },
+    {
+        "name": "Hardy",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1,
+        "summary": ""
+    },
+    {
+        "name": "Hasty",
+        "hp": 1,
+        "atk": 1,
+        "def": 0.9,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1.1,
+        "summary": "+Spe, -Def"
+    },
+    {
+        "name": "Impish",
+        "hp": 1,
+        "atk": 1,
+        "def": 1.1,
+        "spa": 0.9,
+        "spd": 1,
+        "spe": 1,
+        "summary": "+Def, -SpA"
+    },
+    {
+        "name": "Jolly",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 0.9,
+        "spd": 1,
+        "spe": 1.1,
+        "summary": "+Spe, -SpA"
+    },
+    {
+        "name": "Lax",
+        "hp": 1,
+        "atk": 1,
+        "def": 1.1,
+        "spa": 1,
+        "spd": 0.9,
+        "spe": 1,
+        "summary": "+Def, -SpD"
+    },
+    {
+        "name": "Lonely",
+        "hp": 1,
+        "atk": 1.1,
+        "def": 0.9,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1,
+        "summary": "+Atk, -Def"
+    },
+    {
+        "name": "Mild",
+        "hp": 1,
+        "atk": 1,
+        "def": 0.9,
+        "spa": 1.1,
+        "spd": 1,
+        "spe": 1,
+        "summary": "+SpA, -Def"
+    },
+    {
+        "name": "Modest",
+        "hp": 1,
+        "atk": 0.9,
+        "def": 1,
+        "spa": 1.1,
+        "spd": 1,
+        "spe": 1,
+        "summary": "+SpA, -Atk"
+    },
+    {
+        "name": "Naive",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 0.9,
+        "spe": 1.1,
+        "summary": "+Spe, -SpD"
+    },
+    {
+        "name": "Naughty",
+        "hp": 1,
+        "atk": 1.1,
+        "def": 1,
+        "spa": 1,
+        "spd": 0.9,
+        "spe": 1,
+        "summary": "+Atk, -SpD"
+    },
+    {
+        "name": "Quiet",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1.1,
+        "spd": 1,
+        "spe": 0.9,
+        "summary": "+SpA, -Spe"
+    },
+    {
+        "name": "Quirky",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1,
+        "summary": ""
+    },
+    {
+        "name": "Rash",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1.1,
+        "spd": 0.9,
+        "spe": 1,
+        "summary": "+SpA, -SpD"
+    },
+    {
+        "name": "Relaxed",
+        "hp": 1,
+        "atk": 1,
+        "def": 1.1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 0.9,
+        "summary": "+Def, -Spe"
+    },
+    {
+        "name": "Sassy",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1.1,
+        "spe": 0.9,
+        "summary": "+SpD, -Spe"
+    },
+    {
+        "name": "Serious",
+        "hp": 1,
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1,
+        "summary": ""
+    },
+    {
+        "name": "Timid",
+        "hp": 1,
+        "atk": 0.9,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1.1,
+        "summary": "+Spe, -Atk"
+    }
+]
