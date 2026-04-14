@@ -3,6 +3,7 @@ import './App.css'
 import NavBar from "./components/navbar/navbar"
 import Home from "./pages/home/home"
 import Dex from "./pages/dex/dex"
+import MySets from "./pages/mySets/mySets"
 
 function App() {
 
@@ -10,9 +11,10 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        <Routes>
+        <Routes className="g-4">
           <Route path="/" element={<Home />} />
           <Route path="/dex" element={<Dex />} />
+          <Route path="/mySets" element={<MySets />} />
         </Routes>
       </BrowserRouter>
         

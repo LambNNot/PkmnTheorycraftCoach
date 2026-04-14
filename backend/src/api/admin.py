@@ -9,6 +9,7 @@ from src.data.species.pkmn_types import getAllTypes
 from src.data.abilities.pkmn_abilities import getAllAbilities
 from src.data.items.pkmn_items import getAllItems
 from src.data.natures.pkmn_natures import getAllNatures
+from src.data.sets.pkmn_sets import getAllSets
 
 
 PKMN_SPECIES_PATH = "../data/species/pkmn_species.json"
@@ -156,6 +157,37 @@ def init_pkmn_abilities():
     return status.HTTP_200_OK
 
 
+@router.post("/initItems", status_code=status.HTTP_200_OK)
+def init_pkmn_items():
+    print("Retrieving all items...", sep=" ")
+    allItems = getAllItems()
+    print("SUCCESS")
+
+    print("Upserting items...", sep=" ")
+    with db.engine.begin() as connection:
+        connection.execute( 
+            sqlalchemy.text(
+                """
+                INSERT INTO item (
+                    name, description
+                )
+                VALUES (
+                    :name, :description
+                )
+                ON CONFLICT (name)
+                DO UPDATE SET
+                    description = EXCLUDED.description
+                """
+            ),
+            [
+                {field : t.get(field) for field in ["name", "description"]}
+                for t in allItems
+            ]
+        )
+    print("SUCCESS")
+    return status.HTTP_200_OK
+
+
 @router.post("/initNatures", status_code=status.HTTP_200_OK)
 def init_pkmn_natures():
     print("Retrieving all natures...", sep=" ")
@@ -257,3 +289,138 @@ def init_pkmn_species():
             ]
         )
     print("SUCCESS")
+
+@router.post("/initSets", status_code=status.HTTP_200_OK)
+def init_pkmn_sets():
+    print("Retrieving all sets...", sep = "")
+    allSets = getAllSets()
+    print("SUCCESS")
+
+    print("Upserting all sets...")
+    with db.engine.begin() as connection:
+        connection.execute(
+            sqlalchemy.text(
+                """
+                WITH input AS (
+                    SELECT
+                        :id AS id,
+                        :name AS name,
+
+                        :species AS species,
+                        :item AS item,
+                        :ability AS ability,
+                        :nature AS nature,
+
+                        :hp_ev AS hp_ev,
+                        :atk_ev AS atk_ev,
+                        :def_ev AS def_ev,
+                        :spa_ev AS spa_ev,
+                        :spd_ev AS spd_ev,
+                        :spe_ev AS spe_ev,
+
+                        :hp_iv AS hp_iv,
+                        :atk_iv AS atk_iv,
+                        :def_iv AS def_iv,
+                        :spa_iv AS spa_iv,
+                        :spd_iv AS spd_iv,
+                        :spe_iv AS spe_iv
+                )
+                INSERT INTO pokeset (
+                    name,
+
+                    mon_id,
+                    item_id,
+                    ability_id,
+                    nature_id,
+
+                    hp_ev,
+                    atk_ev,
+                    def_ev,
+                    spa_ev,
+                    spd_ev,
+                    spe_ev,
+
+                    hp_iv,
+                    atk_iv,
+                    def_iv,
+                    spa_iv,
+                    spd_iv,
+                    spe_iv,
+
+                    author_id
+                )
+                SELECT
+                    i.name, p.id, item.id, a.id, n.id,
+                    i.hp_ev, i.atk_ev, i.def_ev, spa_ev, spd_ev, spe_ev,
+                    hp_iv, atk_iv, def_iv, spa_iv, spd_iv, spe_iv, -1
+                FROM input i
+                JOIN pokemon p
+                    ON i.species = p.species
+                JOIN item 
+                    ON i.item = item.name
+                JOIN ability a
+                    ON i.ability = a.name
+                JOIN nature n
+                    ON i.nature = n.name
+                ON CONFLICT (id) DO UPDATE SET
+                    name = EXCLUDED.name,
+
+                    mon_id = EXCLUDED.mon_id,
+                    item_id = EXCLUDED.item_id,
+                    ability_id = EXCLUDED.ability_id,
+                    nature_id = EXCLUDED.nature_id,
+
+                    hp_ev = EXCLUDED.hp_ev,
+                    atk_ev = EXCLUDED.atk_ev,
+                    def_ev = EXCLUDED.def_ev,
+                    spa_ev = EXCLUDED.spa_ev,
+                    spd_ev = EXCLUDED.spd_ev,
+                    spe_ev = EXCLUDED.spe_ev,
+
+                    hp_iv = EXCLUDED.hp_iv,
+                    atk_iv = EXCLUDED.atk_iv,
+                    def_iv = EXCLUDED.def_iv,
+                    spa_iv = EXCLUDED.spa_iv,
+                    spd_iv = EXCLUDED.spd_iv,
+                    spe_iv = EXCLUDED.spe_iv
+                """
+            ),
+            [
+                {
+                    "id": s["id"],
+                    "name": s["name"],
+
+                    "species": s["species"],
+                    "item": s["item"],
+                    "ability": s["ability"],
+                    "nature": s["nature"],
+
+                    "hp_ev": s["hp_ev"],
+                    "atk_ev": s["atk_ev"],
+                    "def_ev": s["def_ev"],
+                    "spa_ev": s["spa_ev"],
+                    "spd_ev": s["spd_ev"],
+                    "spe_ev": s["spe_ev"],
+
+                    "hp_iv": s["hp_iv"],
+                    "atk_iv": s["atk_iv"],
+                    "def_iv": s["def_iv"],
+                    "spa_iv": s["spa_iv"],
+                    "spd_iv": s["spd_iv"],
+                    "spe_iv": s["spe_iv"],
+                }
+                for s in allSets
+            ]
+        )
+
+    print("SUCCESS")
+
+
+@router.delete("/pkmn", status_code=status.HTTP_200_OK)
+def del_pkmn():
+    with db.engine.begin() as connection:
+        connection.execute(
+            sqlalchemy.text("TRUNCATE TABLE item, nature, pokemon, pokeset, type_effectiveness, type")
+        )
+    
+    return status.HTTP_200_OK

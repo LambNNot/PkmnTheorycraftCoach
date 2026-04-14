@@ -8,7 +8,7 @@ export default function Dex() {
   useEffect(() => {
     const fetchPKMN = async () => {
       try {
-        const response = await fetch("http://localhost:3000/pkmn/");
+        const response = await fetch("http://localhost:3000/pkmn/search_species");
 
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);

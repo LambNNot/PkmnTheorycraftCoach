@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from typing import Tuple
 
 CWD = Path(__file__).resolve().parent
 TYPE_FILENAME = "typeData.json"
@@ -17,6 +18,18 @@ def next_prime():
         curr = prime_idx_tracker
         prime_idx_tracker += 1
         return PRIMES[curr]
+
+
+def getComponentTypes(typeCode: int) -> Tuple[str, str]:
+    """
+    Returns the constituent primes that make up a typecode in a 2-tuple.\n
+    Ex. typeCode(6) = (2, 3)
+    """
+    for p in PRIMES:
+        if typeCode % p == 0:
+            return (p, typeCode / p)
+    return -1
+
 
 def create_weakness_table():
 
