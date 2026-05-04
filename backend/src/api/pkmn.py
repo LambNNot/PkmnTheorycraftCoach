@@ -8,7 +8,7 @@ from typing import List, Self, Optional
 from datetime import date, datetime
 from psycopg import errors
 from src.db.schemas.schemas import PokemonSchema
-from src.data.species.pkmn_types import getDualTypeCode, getMonoTypeCode, getComponentTypes
+from src.data.species.pkmn_types import getTypeCode, getComponentTypes
 
 router = APIRouter(
     prefix="/pkmn",
@@ -65,22 +65,10 @@ class Pokemon(BaseModel):
     base_spe: int
     weight: float
 
-class PokeSet(BaseModel):
-    name: str
-    species: str
-    forme: str
-    item: str
-    ability: str
-    tera: str
-    author: str
-
 @router.post("/", status_code=status.HTTP_201_CREATED)
 def post_species(species_data: Pokemon) -> None:
     # Get typecode
-    if (not species_data.type_two == ""):
-        typeCode = getDualTypeCode(species_data.type_one, species_data.type_two)
-    else:
-        typeCode = getMonoTypeCode(species_data.type_one)
+    typeCode = getTypeCode(species_data.type_one, species_data.type_two if not species_data.type_two == "" else None)
 
     raise NotImplementedError()
     with db.engine.begin() as connection:
@@ -187,99 +175,6 @@ def search_species(
             )
             for result in results
         ]
-    
-
-@router.get("/search_set", response_model=List[PokeSet])
-def search_set(
-    set_name: Optional[str] = Query(None),
-    species_name: Optional[str] = Query(None),
-    item: Optional[str] = Query(None),
-    ability: Optional[str] = Query(None),
-    type_one: Optional[str] = Query(None),
-    type_two: Optional[str] = Query(None),
-    forme: Optional[str] = Query(None),
-    author: Optional[str] = Query(None)
-) -> List[PokeSet]:
-    print("Received search query:")
-    query = {
-        "set_name": set_name,
-        "species_name": species_name,
-        "item": item,
-        "ability": ability,
-        "type_one": type_one,
-        "type_two": type_two,
-        "forme": forme,
-        "author": author,
-    }
-    print("Received search query:")
-    for k in query.keys():
-        if query[k]: print(f"{k}: {query[k]}")
-
-    typeCode = getTypeCode(type_one, type_two)
-    if typeCode == -1: raise HTTPException(status_code=status.HTTP_406_NOT_ACCEPTABLE, detail="Invalid type(s)")
-    
-    with db.engine.begin() as connection:
-        results = connection.execute(
-            sqlalchemy.text(
-                """
-                SELECT
-                    pokeset.name as name, p.species as species, i.name as item, a.name as ability, t.name as type, p.forme as forme, u.username as author
-                FROM pokeset
-                JOIN pokemon p
-                    ON mon_id = p.id
-                JOIN item i
-                    ON item_id = i.id
-                JOIN ability a
-                    ON ability_id = a.id
-                JOIN type t
-                    ON t.type_code = p.type_code
-                JOIN "user" u
-                    ON author_id = u.id
-                WHERE pokeset.name ILIKE '%' || COALESCE(:set_name, '') || '%'
-                    AND p.species ILIKE '%' || COALESCE(:species_name, '') || '%'
-                    AND i.name ILIKE '%' || COALESCE(:item, '') || '%'
-                    AND p.forme ILIKE '%' || COALESCE(:forme, '') || '%'
-                    AND a.name ILIKE '%' || COALESCE(:ability, '') || '%'
-                    AND t.type_code % :typeCode = 0
-                    AND u.username ILIKE '%' || COALESCE(:author, '') || '%'
-                ORDER BY
-                    dex_no ASC
-                LIMIT 100
-                """
-            ),
-            [{
-                "set_name": set_name,
-                "species_name" : species_name,
-                "item": item,
-                "ability": ability,
-                "forme": forme,
-                "typeCode": typeCode,
-                "author": author,
-            }]
-        ).all()
-        
-        return [
-            PokeSet(
-                name=result.name,
-                species=result.species,
-                forme=result.forme,
-                item=result.item,
-                ability=result.ability,
-                tera="Normal",
-                author=result.author
-            )
-            for result in results
-        ]
-    
-def getTypeCode(type_one: str, type_two: str) -> int:
-    """Utility function that fetches the corresponding typecode for querying"""
-    isDualType = type_one is not None and type_two is not None
-    if isDualType:
-        return getDualTypeCode(type_one, type_two)
-    elif type_one or type_two:
-        return getMonoTypeCode(type_one if type_one else type_two)
-    else:
-        return 1 # Matches all types for type filter
 
 
 @router.get("/{species_name}", response_model=List[PokemonSchema])
@@ -320,3 +215,28 @@ def get_pokemon(species_name):
             )
             for result in results
         ]
+    
+class UserCreate(BaseModel):
+    username: str
+    password: str
+    is_public: bool
+
+    
+@router.post("/new_user", status_code=status.HTTP_201_CREATED)
+def new_user(body: UserCreate):
+    """Create a new user"""
+
+    with db.engine.begin() as connection:
+        connection.execute(
+            sqlalchemy.text(
+                """
+                INSERT INTO "user" (username, password_hash, is_public)
+                VALUES (:username, :password_hash, :is_public)
+                """
+            ),
+            {
+                "username": body.username,
+                "password_hash": body.password,
+                "is_public": body.is_public,
+            }
+        )

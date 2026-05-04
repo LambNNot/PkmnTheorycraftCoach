@@ -175,6 +175,12 @@ if __name__ == "__main__":
     print(getAllTypes())
 
 
-
-
-
+def getTypeCode(type_one: str, type_two: str|None) -> int:
+    """Utility function that fetches the corresponding typecode for querying"""
+    isDualType = type_one is not None and type_two is not None
+    if isDualType:
+        return getDualTypeCode(type_one, type_two)
+    elif type_one or type_two:
+        return getMonoTypeCode(type_one if type_one else type_two)
+    else:
+        return 1 # Matches all types for type filter

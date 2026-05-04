@@ -125,6 +125,18 @@ class User(BaseModel):
     username: str
     password_hash: str
     is_public: bool
+
+class PokeTeamsSchema(BaseModel):
+    id: int                 # Auto-incrementing primary key
+    name: str
+    authorId: int           # Foreign Key to User Table
+    set1ID: int | None      # 1-6 Foreign keys to PokeSet table
+    set2ID: int | None
+    set3ID: int | None
+    set4ID: int | None
+    set5ID: int | None
+    set6ID: int | None
+
     
 
 
