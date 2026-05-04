@@ -1,15 +1,15 @@
 from fastapi import FastAPI
-from src.api import games, user, showcases, reports, admin
+from src.api import user, admin, pkmn, pokesets, poketeams
 from starlette.middleware.cors import CORSMiddleware
 
 description = """
 The new and upcoming Chess social platform for both serious and casual fans alike!
 """
 tags_metadata = [
-    {"name": "games", "description": "Games..."},
-    {"name": "showcases", "description": "High(/low)lights from games!"},
+    # {"name": "games", "description": "Games..."},
+    # {"name": "showcases", "description": "High(/low)lights from games!"},
     {"name": "user", "description": "You're a user, ur a user, everybody's a user"},
-    {"name": "reports", "description": "x9 Sion"},
+    # {"name": "reports", "description": "x9 Sion"},
 ]
 
 app = FastAPI(
@@ -24,7 +24,10 @@ app = FastAPI(
     openapi_tags=tags_metadata,
 )
 
-origins = ["https://potion-exchange.vercel.app"]
+origins = [
+    "https://potion-exchange.vercel.app",
+    "http://localhost:5173"
+]
 
 app.add_middleware(
     CORSMiddleware,
@@ -34,11 +37,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(games.router)
-app.include_router(showcases.router)
 app.include_router(user.router)
-app.include_router(reports.router)
 app.include_router(admin.router)
+app.include_router(pkmn.router)
+app.include_router(pokesets.router)
+app.include_router(poketeams.router)
 
 # app.include_router(inventory.router)
 # app.include_router(carts.router)
